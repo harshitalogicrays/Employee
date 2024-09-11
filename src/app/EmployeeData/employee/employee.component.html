@@ -1,0 +1,101 @@
+
+
+<!-- <img src="../../assets/images/{{imgurl}}" width="200" height="100"> -->
+<!-- <h1>{{data}}</h1>
+<hr>
+<table border style="border-collapse:collapse ;">
+    <tr> -->
+        <!-- <th attr.colspan="{{cols}}">{{data}}</th> -->
+        <!-- <th [attr.colspan]="cols">{{data}}</th>
+    </tr>
+    <tr>
+        <th>Employee ID</th>
+        <td>{{id}}</td>
+   </tr>
+   <tr>
+    <th>Employee Firstname</th>
+    <td>{{fname}}</td>
+</tr>
+<tr>
+    <th>Employee Lastname</th>
+    <td>{{lname}}</td>
+</tr>
+<tr *ngIf="toggleBtn">
+    <th>Employee Gender</th>
+    <td>{{gender}}</td>
+</tr>
+<tr *ngIf="toggleBtn">
+    <th>Employee salary</th>
+    <td>{{salary}}</td>
+</tr>
+</table> 
+<br>
+<button type="button" (click)="showhide()">
+    {{toggleBtn?'Hide':'Show'}} Details</button> -->
+
+<!-- <button type="button" disabled="{{isDisabled}}">Click ME</button> -->
+
+<!-- <button type="button" [disabled]="isDisabled">Click ME</button> -->
+
+<!-- <button type="button" bind-disabled="isDisabled">Click ME</button>
+
+<input type="text"  id="a"> -->
+
+<!-- <button type="button" (click)="fun()">Click ME</button> -->
+
+<!-- <button type="button" on-click="fun()">Click ME</button> -->
+
+
+<!-- <div *ngIf="showdata;else falseblock ">
+    <p>This is div tag child element</p>
+</div>
+<ng-template #falseblock>
+    <h1>Error</h1>
+</ng-template> -->
+
+<!-- <div *ngIf="showdata;then trueblock else falseblock ">
+    <p>This is div tag child element</p>
+</div>
+<ng-template #trueblock>
+    <h1>Success</h1>
+</ng-template>
+<ng-template #falseblock>
+    <h1>Error</h1>
+</ng-template>
+
+<ng-template [ngIf]="showdata">
+    dgfgfgf
+</ng-template> -->
+
+<ol type="i">
+    <li *ngFor="let n of names;first as f;last as l;
+    even as e;odd as o ">
+        {{n}} {{f}} {{l}} {{e}} {{o}}
+    </li>
+</ol>
+
+<select (change)="setName($event)">
+    <option selected disabled>select Name</option>
+    <!-- <option *ngFor="let n of names;index as i">
+        {{i}} {{n}}
+     </option> -->
+
+    <option *ngFor="let n of names;let i=index">
+       {{n}}
+    </option>
+</select>
+
+<div [ngSwitch]="choose" [ngClass]="applyclass">
+    <h3 *ngSwitchCase="'Harshita'">Hello from {{names[0]}}</h3>
+    <h3 *ngSwitchCase="'Neelam'">Hello from Neelam</h3>
+    <h3 *ngSwitchCase="'Seema'">Hello from Seema</h3>
+    <h3 *ngSwitchCase="'Rekha'">Hello from Rekha</h3>
+    <h3 *ngSwitchDefault="">Invalid</h3>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" routerLinkActive="text-warning" >Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/addemployee" routerLinkActive="text-warning" >Add Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/emplist"  routerLinkActive="text-warning">View Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/resume"  routerLinkActive="text-warning">Add Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/saleproducts"  routerLinkActive="text-warning">Sale Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/newarrivals"  routerLinkActive="text-warning">
+              <span class="badge bg-primary"> New Arrivals</span>
+             </a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login"  routerLinkActive="text-warning" *ngIf="!_auth.loggedIn()">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/register"  routerLinkActive="text-warning" *ngIf="!_auth.loggedIn()">Signup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" *ngIf="_auth.loggedIn()" (click)="_auth.logout()">Logout</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+  <carousel [interval]="2000">
+    <slide>
+      <img src="assets/images/c1.jpg" alt="first slide" style="display: block; width: 100%;height: 250px;">
+    </slide>
+    <slide>
+      <img src="assets/images/c2.jpg" alt="second slide" style="display: block; width: 100%;height: 250px;">
+    </slide>
+    <slide>
+      <img src="assets/images/c3.jpg" alt="third slide" style="display: block; width: 100%;height: 250px;">
+    </slide>
+  </carousel>

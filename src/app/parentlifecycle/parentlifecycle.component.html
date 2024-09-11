@@ -1,0 +1,16 @@
+<p>parentlifecycle works!</p>
+<input type="text" #val>
+<button type="button" (click)="changeVal(val)">Click me</button>
+
+<br><br>
+<button type="button" (click)="Destroy()">Delete child</button>
+<br>
+
+<div style="background-color: burlywood;" *ngIf="togglebtn">
+    <h3>child Component</h3>
+<app-childlifecycle [txtvalue]="value">
+    Hello 
+    <p>ghfhfgf</p>
+    {{value}}
+</app-childlifecycle>
+</div>

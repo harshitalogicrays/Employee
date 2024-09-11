@@ -1,0 +1,101 @@
+{
+  "Employees": [
+    {
+      "id": 3,
+      "fname": "Seema",
+      "lname": "Shrivastva",
+      "gender": "female",
+      "salary": 15000,
+      "hiredate": "1-08-2010",
+      "hra": "4000",
+      "da": 1000,
+      "designation": {
+        "id": 103,
+        "name": "Admin"
+      }
+    },
+    {
+      "fname": "ram",
+      "lname": "sharma",
+      "gender": "male",
+      "salary": "877656",
+      "hra": "234",
+      "da": "1000",
+      "hiredate": "12-01-2001",
+      "designation": "Admin",
+      "id": 7
+    },
+    {
+      "fname": "dsfsf",
+      "lname": "sdsd",
+      "gender": "female",
+      "salary": "11",
+      "hra": "11",
+      "da": "11",
+      "hiredate": "12-12-2002",
+      "designation": "Developer",
+      "id": 8
+    },
+    {
+      "fname": "Vaibhav",
+      "lname": "Maheshwari",
+      "gender": "male",
+      "salary": "2000000",
+      "hiredate": "12-20-2001",
+      "hra": "10000",
+      "da": "8765",
+      "designation": {
+        "id": 101,
+        "name": "Developer"
+      },
+      "id": 9
+    },
+    {
+      "fname": "Ram",
+      "lname": "Sharma",
+      "gender": "male",
+      "salary": "123456",
+      "hiredate": "12-12-2012",
+      "hra": "11",
+      "da": "11",
+      "designation": {
+        "id": 101,
+        "name": "Developer"
+      },
+      "id": 10
+    }
+  ],
+  "resume": [],
+  "user": [
+    {
+      "email": "abc@gmail.com",
+      "password": 12345
+    }
+  ],
+  "salesproducts": [
+    {
+      "id": 1,
+      "name": "ACs",
+      "image": "assets/images/c2.jpg",
+      "price": 400000
+    },
+    {
+      "id": 2,
+      "name": "Phone",
+      "image": "assets/images/c1.jpg",
+      "price": 200000
+    },
+    {
+      "id": 3,
+      "name": "Electronics",
+      "image": "assets/images/c4.jpg",
+      "price": 800000
+    },
+    {
+      "id": 4,
+      "name": "Fashion",
+      "image": "assets/images/c4.jpg",
+      "price": 600000
+    }
+  ]
+}

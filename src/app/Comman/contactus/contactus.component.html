@@ -1,0 +1,21 @@
+<div>
+    <input type="text" placeholder="enter remarks" #remark>
+    <button type="button" (click)="submitremark(remark)">Submit Feedback</button>
+</div>
+<p>Notice - {{notice}}</p>
+
+
+<br><br>
+<!-- <div>
+    <h1 #highlight>This is Contact Us component</h1>
+    <h1 #highlight>This is Contact Us component</h1>
+    <h2 #highlight>This is Contact Us component</h2>
+</div> -->
+<br>
+<br>
+<button (click)="inc()" class="btn btn-primary m-2">Increment</button>
+<button (click)="dec()" class="btn btn-primary m-2">Decrement</button>
+<hr>
+<h1>Child component</h1>
+<app-counter #counter></app-counter>
+

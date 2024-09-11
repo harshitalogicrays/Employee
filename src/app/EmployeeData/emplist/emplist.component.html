@@ -1,0 +1,113 @@
+<!-- <br>
+<h1 [class.success]="applysuccess">hfgdhfgdf</h1>
+<h1 [ngClass]="applyclass">hello</h1>
+<p [style.font-size.px]="40"> gjgghj</p>
+<p [style.color]=" 'green' " >fdhfhdjfh</p>
+<p [style.fontWeight]="isBold?'bold':'normal'">fghdghdg</p>
+<div [ngStyle]="myStyle">
+    <input type="radio" name="emp" checked
+    (click)="DisplayEmp('F')">Full Time Employees
+    <input type="radio" name="emp"
+    (click)="DisplayEmp('P')">Part Time Employees
+</div> -->
+
+<!-- <div *ngIf="errordis" class="alert alert-danger">
+    <h1>{{errorMsg}}</h1>
+</div> -->
+
+<br>
+<!-- <app-emp-count [all]="getTotalEmp()" [female]="getTotalFemaleEmp()" [male]="getTotalMaleEmp()"
+(countRadioBtnSelectionChanged)="onRadioButtonChange($event)"></app-emp-count> -->
+<div *ngIf="!errordis">
+<app-emp-count [all]="getTotalEmp()" [female]="getTotalFemaleEmp()" [male]="getTotalMaleEmp()"
+#chilComp></app-emp-count>
+<!-- {{chilComp.selectedRadioBtnValue}} -->
+<br>
+<br>
+<!-- <input type="text" [(ngModel)]="fname"> <button type="button" (click)="addEmp()">Add Employee</button><br><br>
+<input type="text" placeholder="search by name" [(ngModel)]="searchvalue">
+<br><br> -->
+<div class="col-8" >
+<table border class="table table-bordered table-striped">
+    <tr class="bg-info">
+        <!-- <th>Id</th> -->
+         <th>Firstname</th>
+        <th>Lastname</th> <th>Gender</th>
+        <th>{{fempflag?'Salary':'Hours'}}</th>
+        <th>HRA</th>
+        <th>DA</th>
+        <th>{{fempflag?'Hiredate':'Rate'}}</th>
+        <th>Experience</th>
+        <th *ngIf="!fempflag">Total Sal</th><th *ngIf="fempflag">Total Sal</th>
+        <th>Actions</th>
+    </tr> 
+    <ng-container *ngFor="let e of Employee| filter:searchvalue index as i">
+    <!-- <tr  *ngIf="selectedRadioBtn=='all' || selectedRadioBtn==e.gender"> -->
+        <tr *ngIf="chilComp.selectedRadioBtnValue=='all' || chilComp.selectedRadioBtnValue==e.gender.toLowerCase()"
+        (click)="onSelect(e.id)">
+        <!-- <td>{{e._id}}</td> -->
+        <td>{{e.fname | uppercase |title:e.gender }}</td>
+        <td>{{e.lname | lowercase}}</td>
+        <td>{{e.gender | titlecase | slice:0:1}}</td>
+        <td *ngIf="fempflag">{{e.salary | currency:'INR':true:'1.0-0'}}</td> <td *ngIf="!fempflag">{{e.hour}}</td>
+        <td>{{e.hra}}</td>
+        <td>{{e.da}}</td>
+        <td *ngIf="fempflag">{{e.hiredate | date:'dd-MMM-yyyy hh:mm:ss' |uppercase }}</td> <td *ngIf="!fempflag">{{e.rate}}</td>
+        <td>{{e.hiredate | exp}}</td>
+        <td *ngIf="!fempflag">{{e.hour*e.rate}}</td>
+        <td *ngIf="fempflag">{{e.salary |totalsal:e.hra:e.da}}</td>
+        <td>
+            <button type="button" class="btn btn-success bg-success m-2"
+            (click)="editEmp(e._id)"><i class="bi bi-pencil-square"></i></button>
+            <button type="button"class="btn btn-danger bg-danger m-2"
+            (click)="deleteEmp(e._id)"><i class="bi bi-trash"></i></button>
+        </td>
+    </tr>
+</ng-container>
+</table>
+</div>
+<!-- {{0.25 | percent}}
+{{1.3456 | percent:'0.2-3'}} -->
+
+
+
+
+<!-- <table border [cellSpacing]="0">
+    <tr>
+        <th>Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Gender</th>
+        <th>Hours</th>
+        <th>Rate</th>
+        <th>Salary</th>
+    </tr>
+    <tr *ngFor="let fe of PEmployees">
+        <td>{{fe.id}}</td>
+        <td>{{fe.fname}}</td>
+        <td>{{fe.lname}}</td>
+        <td>{{fe.gender}}</td>
+        <td>{{fe.hour}}</td>
+        <td>{{fe.rate}}</td>
+        <td>{{fe.hour*fe.rate}}</td>
+    </tr>
+</table> -->
+
+
+<!-- <table border>
+    <tr>
+        <th>Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Gender</th>
+        <th>Salary</th>
+    </tr>
+    <tr *ngFor="let fe of emp1 | async">
+        <td>{{fe.id}}</td>
+        <td>{{fe.fname}}</td>
+        <td>{{fe.lname}}</td>
+        <td>{{fe.gender}}</td>
+        <td>{{fe.salary}}</td>
+    </tr>
+</table>  -->
+<!-- </div> -->
